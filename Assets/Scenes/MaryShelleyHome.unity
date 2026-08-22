@@ -2420,7 +2420,6 @@ MonoBehaviour:
   dashSpeed: 15
   dashDuration: 0.15
   dashCooldown: 1
-  dashTemperatureCost: 1
 --- !u!1 &1315545673
 GameObject:
   m_ObjectHideFlags: 0
