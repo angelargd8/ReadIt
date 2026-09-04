@@ -11,50 +11,62 @@ public class TimelineManager : MonoBehaviour
     [SerializeField]
     private TMP_Text feedbackText;
 
-    public void CheckTimeline()
+ public void CheckTimeline()
+{
+    int errores = 0;
+
+    foreach (TimelineSlot slot in slots)
     {
-        int errores = 0;
+        // Buscar una carta dentro del Slot
+        TimelineCard card = slot.GetComponentInChildren<TimelineCard>();
 
-        foreach (TimelineSlot slot in slots)
+        // SLOT VACÍO
+        if (card == null)
         {
-            // Slot vac�o
-            if (slot.transform.childCount == 0)
-            {
-                errores++;
-                continue;
-            }
+            errores++;
 
-            TimelineCard card =
-                slot.transform
-                    .GetChild(0)
-                    .GetComponent<TimelineCard>();
+            Debug.Log(
+                $"Slot {slot.SlotOrder}: VACÍO → ERROR"
+            );
 
-            // Por seguridad
-            if (card == null)
-            {
-                errores++;
-                continue;
-            }
-
-            if (card.CorrectOrder != slot.SlotOrder)
-            {
-                errores++;
-            }
+            continue;
         }
 
-        if (errores == 0)
+        // CARTA INCORRECTA
+        if (card.CorrectOrder != slot.SlotOrder)
         {
-            feedbackText.text =
-                "Timeline complete! Mary's memories are back in order.";
+            errores++;
 
-            TimelineCompletado();
+            Debug.Log(
+                $"Slot {slot.SlotOrder}: " +
+                $"CorrectOrder = {card.CorrectOrder} → ERROR"
+            );
         }
         else
         {
-            feedbackText.text =
-                $"{errores} events are out of place.";
+            Debug.Log(
+                $"Slot {slot.SlotOrder}: " +
+                $"CorrectOrder = {card.CorrectOrder} → CORRECTO"
+            );
         }
     }
+
+    Debug.Log($"TOTAL DE ERRORES: {errores}");
+
+    // RESULTADO FINAL
+    if (errores == 0)
+    {
+        feedbackText.text =
+            "Timeline complete! Mary's memories are back in order.";
+
+        TimelineCompletado();
+    }
+    else
+    {
+        feedbackText.text =
+            $"{errores} events are out of place.";
+    }
+}
 
     private void TimelineCompletado()
     {
