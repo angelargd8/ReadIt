@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CartaDialogo : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class CartaDialogo : MonoBehaviour
     [TextArea(3, 6)]
     [SerializeField] private string[] textos;
 
-    [Header("Configuración")]
+    [Header("Configuraciï¿½n")]
     [SerializeField] private bool soloUnaVez = true;
 
     private int indiceActual;
@@ -89,5 +90,12 @@ public class CartaDialogo : MonoBehaviour
         cartaLeida = true;
 
         panelTexto.SetActive(false);
+        CambiarDeEscena();
+    }
+
+        void CambiarDeEscena()
+    {
+        // Puedes usar el nombre exacto de tu escena entre comillas
+        SceneManager.LoadScene("Timeline");
     }
 }
