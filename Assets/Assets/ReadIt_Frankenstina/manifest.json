@@ -1,0 +1,21 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "origin": "centro (0.5,0.5)",
+  "body": "original sin cambios",
+  "layers": [
+    "00_cuerpo_base.png",
+    "07_zapatos",
+    "06_faldas",
+    "05_blusas",
+    "01_ojos",
+    "02_narices",
+    "03_labios",
+    "08_accesorios (cuello, collar, capas, lentes, cicatriz, aretes)",
+    "04_cabello",
+    "08_accesorios (diadema, flor_blanca, rosas, pasador)"
+  ],
+  "notes": "19 prendas y pares de calzado redibujados sobre el contorno original; 9 accesorios redibujados; 6 peinados reajustados para no tapar los ojos. Rasgos faciales conservados. Comprobación: todos los PNG usan el mismo lienzo y el cuerpo original es idéntico."
+}

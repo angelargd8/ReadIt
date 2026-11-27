@@ -1,0 +1,9 @@
+READ IT — FRANKENSTINA / AJUSTE AL MODELO BASE
+
+El cuerpo es el archivo original sin cambios. Todas las capas PNG tienen 1024 x 1536 px, transparencia y el mismo origen. Las blusas, faldas, calzado y varios accesorios se dibujaron sobre las coordenadas del contorno original. No contienen manos o pies de piel. Los rasgos faciales del paquete previo se conservaron y los peinados se ajustaron alrededor de los ojos. Los SVG de las nuevas prendas y accesorios son editables y mantienen la misma escala.
+
+UNITY: Texture Type Sprite (2D and UI); Sprite Mode Single; Mesh Type Full Rect; Pivot Center; mismo Pixels Per Unit. Para UI, usar Image con anchors y RectTransform idénticos, sin cambiar el tamaño nativo de cada capa. Para SpriteRenderer, usar mismo transform local y Sorting Order creciente.
+
+Orden sugerido: 00_cuerpo_base.png > 07_zapatos > 06_faldas > 05_blusas > 01_ojos > 02_narices > 03_labios > 08_accesorios (cuello, collar, capas, lentes, cicatriz, aretes) > 04_cabello > 08_accesorios (diadema, flor_blanca, rosas, pasador)
+
+Combinar una blusa, una falda y un par de zapatos por vez; los collares, gargantillas y capas pueden cubrirse entre sí por diseño. Las flores/pasadores van encima del cabello. Las capas se superponen a la blusa.
