@@ -1,8 +1,10 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RelatoCap3 : MonoBehaviour
+public class RelatoCap3 : MonoBehaviour, IDragHandler
 {
     [SerializeField] private Button panelTexto;
     [SerializeField] private TMP_Text textoRelato;
@@ -20,6 +22,12 @@ public class RelatoCap3 : MonoBehaviour
     private Etapa etapa;
     private string[] pasaje;
     private int pagina;
+
+    // El EventSystem llama a OnDrag cuando el dedo supera el umbral de arrastre.
+    public void OnDrag(PointerEventData evento)
+    {
+        evento.eligibleForClick = false;
+    }
 
     private void Awake()
     {
@@ -61,6 +69,10 @@ public class RelatoCap3 : MonoBehaviour
                 etapa = Etapa.Imagen;
                 panelTexto.gameObject.SetActive(false);
                 panelFrankenstein.gameObject.SetActive(true);
+                break;
+            case Etapa.Cierre:
+                panelTexto.interactable = false;
+                SceneManager.LoadScene("Bookshelf");
                 break;
         }
     }
