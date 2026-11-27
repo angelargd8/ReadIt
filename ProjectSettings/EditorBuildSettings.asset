@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Timeline.unity
     guid: b584228745535cd4684303b190aac754
+  - enabled: 1
+    path: Assets/Scenes/Cap3.unity
+    guid: f41460eb8ec90774d9fc04af2c1123af
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 59344f10eeb4653438429470a245d4b9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f1533a9b136b01849a3bd2451a1becd4, type: 3}
